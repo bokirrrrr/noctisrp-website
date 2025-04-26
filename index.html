@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noctis RP - Official</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-image: url('https://via.placeholder.com/1920x1080?text=Background+NoctisRP');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px #00ffff;
+      animation: fadeInDown 2s ease-out;
+    }
+    #typing {
+      font-size: 24px;
+      color: #00ffff;
+      margin-bottom: 30px;
+      height: 30px;
+    }
+    a.button {
+      text-decoration: none;
+      background: #00ffff;
+      color: #0a0a0a;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      margin: 10px;
+      display: inline-block;
+    }
+    a.button:hover {
+      background: #00cccc;
+      color: #ffffff;
+    }
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .slideshow-container {
+      max-width: 1000px;
+      margin: 30px auto;
+      position: relative;
+    }
+    .slides {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffff44;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+    form button {
+      background: #00ffff;
+      border: none;
+      padding: 15px 30px;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    form button:hover {
+      background: #00cccc;
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #aaa;
+      background: #111;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<header id="home">
+  <h1>Noctis RP</h1>
+  <div id="typing"></div>
+  <a href="#pendaftaran" class="button">Daftar Karakter</a>
+  <a href="#peraturan" class="button">Lihat Peraturan</a>
+  <a href="https://discord.gg/linkserverkamu" target="_blank" class="button">Gabung Discord</a>
+</header>
+
+<!-- Slideshow Section -->
+<section id="galeri">
+  <h2>Galeri Noctis RP</h2>
+  <div class="slideshow-container">
+    <img class="slides" src="https://via.placeholder.com/1000x500?text=Foto+1" alt="Slide 1">
+    <img class="slides" src="https://via.placeholder.com/1000x500?text=Foto+2" alt="Slide 2">
+    <img class="slides" src="https://via.placeholder.com/1000x500?text=Foto+3" alt="Slide 3">
+  </div>
+</section>
+
+<!-- Pendaftaran Section -->
+<section id="pendaftaran">
+  <h2>Pendaftaran Karakter</h2>
+  <form>
+    <input type="text" placeholder="Nama Lengkap" required>
+    <input type="text" placeholder="Nama Karakter" required>
+    <input type="text" placeholder="Umur Karakter" required>
+    <textarea placeholder="Ceritakan latar belakang karakter Anda..." rows="5" required></textarea>
+    <button type="submit">Kirim Pendaftaran</button>
+  </form>
+</section>
+
+<!-- Peraturan Section -->
+<section id="peraturan">
+  <h2>Peraturan Server</h2>
+  <p>1. Hormati sesama pemain dan admin.</p>
+  <p>2. Tidak diperbolehkan cheat, bug exploit, atau trolling berlebihan.</p>
+  <p>3. Roleplay dengan serius sesuai karakter.</p>
+  <p>4. Follow semua panduan tambahan dari staff Noctis RP.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Noctis RP. All Rights Reserved.
+</footer>
+
+<!-- Script Typing Effect & Slideshow -->
+<script>
+  // Typing effect
+  const text = ["Roleplay Terbaik Indonesia", "Bangun Karaktermu di Noctis RP", "Gabung Komunitas Kami!"];
+  let count = 0, index = 0, currentText = '', letter = '';
+
+  function type() {
+    if (count === text.length) {
+      count = 0;
+    }
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById('typing').textContent = letter;
+    if (letter.length === currentText.length) {
+      setTimeout(() => {
+        index = 0;
+        count++;
+        setTimeout(type, 500);
+      }, 2000);
+    } else {
+      setTimeout(type, 100);
+    }
+  }
+
+  type();
+
+  // Slideshow
+  let slideIndex = 0;
+  function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000);
+  }
+  showSlides();
+</script>
+
+</body>
+</html>
