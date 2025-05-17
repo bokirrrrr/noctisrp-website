@@ -3,54 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Peraturan Kota | Noctis RP</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-white min-h-screen p-6">
-  <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold text-center mb-6">📜 Peraturan Kota Noctis RP</h1>
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="Cari peraturan..."
-      class="w-full p-3 rounded mb-6 text-black"
-      oninput="filterRules()"
-    />
-
-    <ul id="rulesList" class="space-y-4">
-      <li class="bg-gray-800 p-4 rounded shadow">
-        <strong>1. No RDM (Random Deathmatch)</strong><br/>
-        Membunuh pemain tanpa alasan RP yang valid.
-      </li>
-      <li class="bg-gray-800 p-4 rounded shadow">
-        <strong>2. No VDM (Vehicle Deathmatch)</strong><br/>
-        Menabrak pemain dengan kendaraan tanpa RP.
-      </li>
-      <li class="bg-gray-800 p-4 rounded shadow">
-        <strong>3. No Meta Gaming</strong><br/>
-        Jangan gunakan info dari luar game ke dalam RP.
-      </li>
-      <li class="bg-gray-800 p-4 rounded shadow">
-        <strong>4. No Power Gaming</strong><br/>
-        Melakukan aksi yang tidak masuk akal dalam RP.
-      </li>
-      <li class="bg-gray-800 p-4 rounded shadow">
-        <strong>5. No Fail RP</strong><br/>
-        Semua aksi harus sesuai dunia RP.
-      </li>
-      <!-- Tambahkan peraturan lainnya -->
-    </ul>
-  </div>
-
-  <script>
-    function filterRules() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const items = document.getElementById("rulesList").getElementsByTagName("li");
-      for (let i = 0; i < items.length; i++) {
-        const text = items[i].textContent.toLowerCase();
-        items[i].style.display = text.includes(input) ? "" : "none";
-      }
+  <title>Peraturan Server Roleplay</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
-  </script>
+    header {
+      background-color: #20232a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #20232a;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #20232a;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Peraturan Server Roleplay</h1>
+  <p>Selamat datang! Mohon baca dan pahami peraturan berikut ini.</p>
+</header>
+
+<main>
+  <section>
+    <h2>1. General Rules</h2>
+    <ul>
+      <li>Dilarang menggunakan cheat/modifikasi ilegal.</li>
+      <li>Dilarang melakukan spam di chat OOC/IC.</li>
+      <li>Hormati semua pemain dan admin.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Roleplay Rules</h2>
+    <ul>
+      <li>Dilarang melakukan Powergaming (PG).</li>
+      <li>Dilarang melakukan Metagaming (MG).</li>
+      <li>Dilarang melakukan Random Deathmatch (RDM).</li>
+      <li>Dilarang melakukan Revenge Kill (RK).</li>
+      <li>Wajib menggunakan /me dan /do dalam situasi RP kompleks.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Crime & Police RP</h2>
+    <ul>
+      <li>Dilarang merampok tanpa alasan RP yang kuat.</li>
+      <li>Minimal anggota geng untuk melakukan perampokan: 3 orang.</li>
+      <li>Polisi wajib menanggapi panggilan darurat IC.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Admin Rules</h2>
+    <ul>
+      <li>Dilarang menyamar menjadi admin.</li>
+      <li>Keputusan admin bersifat final.</li>
+      <li>Laporkan penyalahgunaan admin melalui forum/Discord.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Hukuman</h2>
+    <ul>
+      <li>Melanggar peraturan akan diberi sanksi: kick, jail RP, atau ban tergantung pelanggaran.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Server Roleplay | Semua hak dilindungi
+</footer>
+
 </body>
 </html>
