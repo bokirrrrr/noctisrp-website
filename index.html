@@ -3,58 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Peraturan Kota Noctis RP</title>
+  <title>Peraturan Kota | Noctis RP</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white min-h-screen p-6">
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold mb-4 text-center">📜 Peraturan Kota Noctis RP</h1>
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-center mb-6">📜 Peraturan Kota Noctis RP</h1>
     <input
       type="text"
-      placeholder="Cari peraturan..."
-      class="w-full p-3 mb-6 rounded-md text-black"
-      oninput="filterRules()"
       id="searchInput"
+      placeholder="Cari peraturan..."
+      class="w-full p-3 rounded mb-6 text-black"
+      oninput="filterRules()"
     />
 
     <ul id="rulesList" class="space-y-4">
-      <!-- Daftar peraturan -->
-      <li class="bg-gray-800 p-4 rounded-md shadow">
+      <li class="bg-gray-800 p-4 rounded shadow">
         <strong>1. No RDM (Random Deathmatch)</strong><br/>
-        Membunuh pemain tanpa alasan roleplay yang jelas dilarang.
+        Membunuh pemain tanpa alasan RP yang valid.
       </li>
-      <li class="bg-gray-800 p-4 rounded-md shadow">
+      <li class="bg-gray-800 p-4 rounded shadow">
         <strong>2. No VDM (Vehicle Deathmatch)</strong><br/>
-        Menabrak pemain dengan kendaraan tanpa alasan roleplay yang valid dilarang.
+        Menabrak pemain dengan kendaraan tanpa RP.
       </li>
-      <li class="bg-gray-800 p-4 rounded-md shadow">
+      <li class="bg-gray-800 p-4 rounded shadow">
         <strong>3. No Meta Gaming</strong><br/>
-        Menggunakan informasi dari luar game (OOC) ke dalam game (IC) dilarang.
+        Jangan gunakan info dari luar game ke dalam RP.
       </li>
-      <li class="bg-gray-800 p-4 rounded-md shadow">
+      <li class="bg-gray-800 p-4 rounded shadow">
         <strong>4. No Power Gaming</strong><br/>
-        Melakukan aksi yang tidak realistis atau memaksa pemain lain secara tidak wajar dilarang.
+        Melakukan aksi yang tidak masuk akal dalam RP.
       </li>
-      <li class="bg-gray-800 p-4 rounded-md shadow">
+      <li class="bg-gray-800 p-4 rounded shadow">
         <strong>5. No Fail RP</strong><br/>
-        Melakukan tindakan yang tidak sesuai dengan dunia roleplay akan dikenakan sanksi.
+        Semua aksi harus sesuai dunia RP.
       </li>
-      <li class="bg-gray-800 p-4 rounded-md shadow">
-        <strong>6. Gunplay Over Roleplay</strong><br/>
-        Mengutamakan senjata daripada interaksi RP akan dihukum.
-      </li>
-      <!-- Tambahkan peraturan lainnya di sini -->
+      <!-- Tambahkan peraturan lainnya -->
     </ul>
   </div>
 
   <script>
     function filterRules() {
       const input = document.getElementById("searchInput").value.toLowerCase();
-      const rules = document.getElementById("rulesList").getElementsByTagName("li");
-
-      for (let i = 0; i < rules.length; i++) {
-        const ruleText = rules[i].textContent.toLowerCase();
-        rules[i].style.display = ruleText.includes(input) ? "" : "none";
+      const items = document.getElementById("rulesList").getElementsByTagName("li");
+      for (let i = 0; i < items.length; i++) {
+        const text = items[i].textContent.toLowerCase();
+        items[i].style.display = text.includes(input) ? "" : "none";
       }
     }
   </script>
